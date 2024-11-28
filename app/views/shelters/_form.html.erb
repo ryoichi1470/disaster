@@ -1,0 +1,47 @@
+<%= form_with(model: shelter) do |form| %>
+  <% if shelter.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(shelter.errors.count, "error") %> prohibited this shelter from being saved:</h2>
+
+      <ul>
+        <% shelter.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :capacity %>
+    <%= form.number_field :capacity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :facilities %>
+    <%= form.text_area :facilities %>
+  </div>
+
+  <div class="field">
+    <%= form.label :latitude %>
+    <%= form.text_field :latitude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :longitude %>
+    <%= form.text_field :longitude %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
